@@ -9,8 +9,14 @@ describe("Test suite DEMO", function () {
             .get("/")
         	.set("a", "b")
             .expect({ "name": "CHE" })
-            .end(done);
+            .end(function (err, res) {
+
+                done();
+
+            })
     });
+
+
 
 
 

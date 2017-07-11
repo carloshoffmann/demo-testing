@@ -29,7 +29,7 @@ describe("Test suite DEMO", function () {
     });
 
 
-    it("checking this shit!!!!!", function (done) {
+    it("checking this shit!!", function (done) {
         request
             .get("/")
         	.set("a", "b")

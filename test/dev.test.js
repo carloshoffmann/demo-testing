@@ -67,17 +67,6 @@ describe("Test suite DEMO", function () {
     });
 
 
-    it("checking this again and again!!!!", function (done) {
-        request
-            .get("/")
-        	.set("a", "b")
-            .expect({ "name": "CHE" })
-            .end(function (err, res) {
-
-                done();
-
-            })
-    });
 
 
 

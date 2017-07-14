@@ -1,8 +1,7 @@
 pipeline {
 
     agent any
-    agent label "demo-jenkins"
-
+ 
     environment {
 
         MOCHA_FILE = "./jenkins-test-results.xml"

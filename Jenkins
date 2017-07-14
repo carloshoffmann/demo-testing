@@ -30,21 +30,23 @@ pipeline {
 
         always {
 
-            mail to:"choffmann@bned.cl",
+            mail to:"choffmann@ned.cl",
              subject:"jenkins script running!",
              body:"OK" 
+
+            archive './jenkins-test-results.xml'
 
         }
 
         failure {
-            mail to:"choffmann@bned.cl",
+            mail to:"choffmann@ned.cl",
              subject:"jenkins build fail!!!!",
              body:"OK" 
         }
 
 
         success {
-            mail to:"choffmann@bned.cl",
+            mail to:"choffmann@ned.cl",
              subject:"jenkins script running smoothly!",
              body:"OK" 
 

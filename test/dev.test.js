@@ -16,10 +16,11 @@ describe("Test suite DEMO", function () {
             })
     });
 
+
     it("checking root method again just because I want", function (done) {
         request
             .get("/")
-        	.set("a", "b")
+            .set("a", "b")
             .expect({ "name": "CHE" })
             .end(function (err, res) {
 
@@ -28,10 +29,11 @@ describe("Test suite DEMO", function () {
             })
     });
 
-    it("checking this!!", function (done) {
+
+    it("checking root method again just because I want", function (done) {
         request
             .get("/")
-        	.set("a", "b")
+            .set("a", "b")
             .expect({ "name": "CHE" })
             .end(function (err, res) {
 
@@ -39,34 +41,6 @@ describe("Test suite DEMO", function () {
 
             })
     });
-
-    it("checking this again and again!!!!", function (done) {
-        request
-            .get("/")
-        	.set("a", "b")
-            .expect({ "name": "CHE" })
-            .end(function (err, res) {
-
-                done();
-
-            })
-    });
-
-
-
-    it("checking this again and again!!!!", function (done) {
-        request
-            .get("/")
-        	.set("a", "b")
-            .expect({ "name": "CHE" })
-            .end(function (err, res) {
-
-                done();
-
-            })
-    });
-
-
 
 
 

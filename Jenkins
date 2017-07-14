@@ -5,6 +5,7 @@ pipeline {
 
 
         stage('Build') {
+
             steps {
                 sh '''
                     echo "installing dependencies"
@@ -15,11 +16,16 @@ pipeline {
 
 
         stage('Test') {
+        
             steps {
+                
                 sh '''
                     echo "running tests"
-                    MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha test/** --reporter mocha-junit-reporter
+                    MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha test/** --reporter mocha-junit-reporter                   
                 '''
+                
+                archive './jenkins-test-results.xml'
+
             }
         }
 
@@ -34,7 +40,7 @@ pipeline {
              subject:"jenkins script running!",
              body:"OK" 
 
-            archive './jenkins-test-results.xml'
+             
 
         }
 

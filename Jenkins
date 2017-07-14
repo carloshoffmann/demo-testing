@@ -2,20 +2,38 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'make check'
             }
         }
     }
+
+    post {
+
+        always {
+            junit '**/target/*.xml'
+        }
+
+        failure {
+            mail to: choffmann@ned.cl, subject: 'The Pipeline failed for demo project'
+        }
+
+
+        success {
+            echo 'This will run only if successful'
+        }
+        unstable {
+            echo 'This will run only if the run was marked as unstable'
+        }
+        changed {
+            echo 'This will run only if the state of the Pipeline has changed'
+            echo 'For example, if the Pipeline was previously failing but is now successful'
+        }
+    
+
+
+    }
+
+
 }

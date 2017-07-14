@@ -37,6 +37,20 @@ pipeline {
             }
         }
 
+        stage('Deploy') {
+
+            when {
+                branch 'master'
+            }
+
+            steps {
+                echo 'build the docker image and deploy to servers...!'
+            }
+
+
+
+        }
+
 
     }
 

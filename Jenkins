@@ -2,17 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+
+
+        stage('Build') {
             steps {
-                sh 'make check'
+                sh '''
+                    echo "installing dependencies"
+                    npm install
+                '''
             }
         }
+
+
+        stage('Test') {
+            steps {
+                sh '''
+                    echo "running tests"
+                    MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha tests/** --reporter mocha-junit-reporter
+                '''
+            }
+        }
+
+
     }
 
     post {
 
         always {
-            junit '**/target/*.xml'
+            mail to: choffmann@ned.cl, subject: 'The Pipeline running!'
         }
 
         failure {
@@ -23,9 +40,11 @@ pipeline {
         success {
             echo 'This will run only if successful'
         }
+
         unstable {
             echo 'This will run only if the run was marked as unstable'
         }
+        
         changed {
             echo 'This will run only if the state of the Pipeline has changed'
             echo 'For example, if the Pipeline was previously failing but is now successful'

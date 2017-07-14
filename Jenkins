@@ -9,6 +9,11 @@ pipeline {
 
     }
 
+    properties ([
+        pipelineTriggers([
+            [$class: "GitHubPushTrigger"]
+        ])
+    ])
 
     stages {
 

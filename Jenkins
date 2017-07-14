@@ -29,16 +29,25 @@ pipeline {
     post {
 
         always {
-            mail to: 'choffmann@ned.cl', subject: 'The Pipeline running!'
+
+            mail to:"choffmann@bned.cl",
+             subject:"jenkins script running!",
+             body:"OK" 
+
         }
 
         failure {
-            mail to: 'choffmann@ned.cl', subject: 'The Pipeline failed for demo project'
+            mail to:"choffmann@bned.cl",
+             subject:"jenkins build fail!!!!",
+             body:"OK" 
         }
 
 
         success {
-            echo 'This will run only if successful'
+            mail to:"choffmann@bned.cl",
+             subject:"jenkins script running smoothly!",
+             body:"OK" 
+
         }
 
         unstable {

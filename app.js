@@ -10,6 +10,8 @@ app.get('/', function(req, res) {
 if (!module.parent) {
 	console.log("starting app on port 10010");
 	app.listen(10010);
+
+	
 }
 
 

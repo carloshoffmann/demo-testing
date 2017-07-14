@@ -1,7 +1,7 @@
 pipeline {
 
-    agent { docker 'node:6.9.5' }
- 
+    agent { dockerfile true }
+
     environment {
 
         MOCHA_FILE = "./jenkins-test-results.xml"

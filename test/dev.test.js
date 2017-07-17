@@ -82,6 +82,19 @@ describe("Test suite DEMO", function () {
     });
 
 
+    it("SIETE", function (done) {
+        request
+            .get("/")
+            .set("a", "b")
+            .expect({ "name": "CHE" })
+            .end(function (err, res) {
+
+                done();
+
+            })
+    });
+
+
 
 
 });

@@ -69,7 +69,17 @@ describe("Test suite DEMO", function () {
             })
     });
 
+    it("SEIS", function (done) {
+        request
+            .get("/")
+            .set("a", "b")
+            .expect({ "name": "CHE" })
+            .end(function (err, res) {
 
+                done();
+
+            })
+    });
 
 
 

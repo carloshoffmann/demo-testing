@@ -5,7 +5,7 @@ var request = require("supertest").agent(app.listen(10010));
 
 describe("Test suite DEMO", function () {
 
-    it("checking root method", function (done) {
+    it("UNO", function (done) {
         request
             .get("/")
         	.set("a", "b")
@@ -18,7 +18,7 @@ describe("Test suite DEMO", function () {
     });
 
 
-    it("checking root method again just because I want", function (done) {
+    it("DOS", function (done) {
         request
             .get("/")
             .set("a", "b")
@@ -31,7 +31,7 @@ describe("Test suite DEMO", function () {
     });
 
 
-    it("checking root method again just because I want", function (done) {
+    it("TRES", function (done) {
         request
             .get("/")
             .set("a", "b")
@@ -44,7 +44,7 @@ describe("Test suite DEMO", function () {
     });
 
 
-    it("checking root method again just because I want", function (done) {
+    it("CUATRO", function (done) {
         request
             .get("/")
             .set("a", "b")
@@ -57,7 +57,7 @@ describe("Test suite DEMO", function () {
     });
 
 
-    it("checking root method again just because I want", function (done) {
+    it("CINCO", function (done) {
         request
             .get("/")
             .set("a", "b")
